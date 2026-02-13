@@ -7,3 +7,16 @@ pandas
 plotly
 Pillow
 mediapipe
+
+# FastAPI dependencies
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Audio transcription
+openai-whisper
+moviepy==1.0.3
+imageio-ffmpeg
+
+# Additional utilities
+pydantic

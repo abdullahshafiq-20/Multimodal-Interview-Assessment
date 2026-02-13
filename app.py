@@ -258,7 +258,7 @@ def main():
                     # Update probability chart (throttled to reduce lag)
                     if show_probabilities and current_probabilities and st.session_state.total_frames % 3 == 0:
                         fig = create_emotion_bar_chart(current_probabilities)
-                        chart_placeholder.plotly_chart(fig, use_container_width=True, key=f"prob_chart_{st.session_state.total_frames}")
+                        chart_placeholder.plotly_chart(fig, width='stretch')
                 else:
                     emotion_placeholder.markdown(
                         "<h3 style='text-align: center;'>No face detected</h3>",
@@ -269,7 +269,7 @@ def main():
                 if st.session_state.total_frames % 10 == 0:
                     # Pie chart
                     pie_fig = create_emotion_pie_chart(st.session_state.emotion_counts)
-                    pie_chart_placeholder.plotly_chart(pie_fig, use_container_width=True, key=f"pie_chart_{st.session_state.total_frames}")
+                    pie_chart_placeholder.plotly_chart(pie_fig, width='stretch')
                     
                     # Statistics table
                     stats_df = format_statistics(
@@ -289,8 +289,7 @@ def main():
                         )
                         timeline_placeholder.plotly_chart(
                             timeline_fig,
-                            use_container_width=True,
-                            key=f"timeline_{st.session_state.total_frames}"
+                            width='stretch'
                         )
                 
                 # Small delay to prevent overwhelming the system
